@@ -6,7 +6,7 @@
 ## Title: No Research Dupes
 ## Author: always.ada
 ## APIVersion: 100033
-## AddOnVersion: 0
+## AddOnVersion: 1
 
 NoResearchDupes.lua
 EquipmentClass.lua
