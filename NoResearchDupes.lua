@@ -1,43 +1,6 @@
 NoResearchDupes = {}
 NoResearchDupes.addonName = "NoResearchDupes"
 
--- local traitTypeNameMap = {
---   [ITEM_TRAIT_TYPE_ARMOR_DIVINES] = "divines",
---   [ITEM_TRAIT_TYPE_ARMOR_IMPENETRABLE] = "impenetrable",
---   [ITEM_TRAIT_TYPE_ARMOR_INFUSED] = "infused",
---   [ITEM_TRAIT_TYPE_ARMOR_INTRICATE] = "intricate",
---   [ITEM_TRAIT_TYPE_ARMOR_NIRNHONED] = "nirnhoned",
---   [ITEM_TRAIT_TYPE_ARMOR_ORNATE] = "ornate",
---   [ITEM_TRAIT_TYPE_ARMOR_PROSPEROUS] = "prosperous",
---   [ITEM_TRAIT_TYPE_ARMOR_REINFORCED] = "reinforced",
---   [ITEM_TRAIT_TYPE_ARMOR_STURDY] = "sturdy",
---   [ITEM_TRAIT_TYPE_ARMOR_TRAINING] = "training",
---   [ITEM_TRAIT_TYPE_ARMOR_WELL_FITTED] = "well_fitted",
---   [ITEM_TRAIT_TYPE_JEWELRY_ARCANE] = "arcane",
---   [ITEM_TRAIT_TYPE_JEWELRY_BLOODTHIRSTY] = "bloodthirsty",
---   [ITEM_TRAIT_TYPE_JEWELRY_HARMONY] = "harmony",
---   [ITEM_TRAIT_TYPE_JEWELRY_HEALTHY] = "healthy",
---   [ITEM_TRAIT_TYPE_JEWELRY_INFUSED] = "infused",
---   [ITEM_TRAIT_TYPE_JEWELRY_INTRICATE] = "intricate",
---   [ITEM_TRAIT_TYPE_JEWELRY_ORNATE] = "ornate",
---   [ITEM_TRAIT_TYPE_JEWELRY_PROTECTIVE] = "protective",
---   [ITEM_TRAIT_TYPE_JEWELRY_ROBUST] = "robust",
---   [ITEM_TRAIT_TYPE_JEWELRY_SWIFT] = "swift",
---   [ITEM_TRAIT_TYPE_JEWELRY_TRIUNE] = "triune",
---   [ITEM_TRAIT_TYPE_NONE] = "none",
---   [ITEM_TRAIT_TYPE_WEAPON_CHARGED] = "charged",
---   [ITEM_TRAIT_TYPE_WEAPON_DECISIVE] = "decisive",
---   [ITEM_TRAIT_TYPE_WEAPON_DEFENDING] = "defending",
---   [ITEM_TRAIT_TYPE_WEAPON_INFUSED] = "infused",
---   [ITEM_TRAIT_TYPE_WEAPON_INTRICATE] = "intricate",
---   [ITEM_TRAIT_TYPE_WEAPON_NIRNHONED] = "nirnhoned",
---   [ITEM_TRAIT_TYPE_WEAPON_ORNATE] = "ornate",
---   [ITEM_TRAIT_TYPE_WEAPON_POWERED] = "powered",
---   [ITEM_TRAIT_TYPE_WEAPON_PRECISE] = "precise",
---   [ITEM_TRAIT_TYPE_WEAPON_SHARPENED] = "sharpened",
---   [ITEM_TRAIT_TYPE_WEAPON_TRAINING] = "training",
--- }
-
 local function isBagAvailableForResearch(bagId)
   return bagId == BAG_BACKPACK or bagId == BAG_BANK or bagId == BAG_SUBSCRIBER_BANK
 end
