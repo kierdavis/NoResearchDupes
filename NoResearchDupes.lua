@@ -135,7 +135,6 @@ local function updateTraitIconColourInInventoryRow(rowControl, slotData)
   end
 end
 
-
 local function sortInventoryViewByModifiedTraitInformation(inventory)
   local scrollData = ZO_ScrollList_GetDataList(inventory.list)
   table.sort(scrollData, function(entry1, entry2)
