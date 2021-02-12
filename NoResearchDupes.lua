@@ -176,4 +176,10 @@ local function initialize()
   ZO_PreHook(SMITHING.deconstructionPanel.inventory, "SortData", sortInventoryView)
 end
 
-EVENT_MANAGER:RegisterForEvent(NoResearchDupes.addonName, EVENT_ADD_ON_LOADED, initialize)
+local function onAddOnLoaded(eventCode, addonName)
+  if addonName == NoResearchDupes.addonName then
+    initialize()
+  end
+end
+
+EVENT_MANAGER:RegisterForEvent(NoResearchDupes.addonName, EVENT_ADD_ON_LOADED, onAddOnLoaded)
