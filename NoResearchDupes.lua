@@ -19,9 +19,26 @@ local function isTraitCraftingMaterial(slotData)
   -- Jade etc.
   return slotData.itemType == ITEMTYPE_WEAPON_TRAIT or slotData.itemType == ITEMTYPE_ARMOR_TRAIT or slotData.itemType == ITEMTYPE_JEWELRY_TRAIT
 end
+local function doesTraitTypeContradictTraitInformation(slotData)
+  -- Hack: for some reason we keep encountering slots where traitInformation
+  -- is ITEM_TRAIT_INFORMATION_CAN_BE_RESEARCHED, but nrdTraitType is
+  -- ITEM_TRAIT_TYPE_NONE. The item clearly does have a researchable trait
+  -- when viewed in-game, so nrdTraitType must be wrong. Maybe augmentSlotData
+  -- is getting called before some underlying data source is properly loaded?
+  -- Regardless, let's try the lookup again.
+  return slotData.traitInformation == ITEM_TRAIT_INFORMATION_CAN_BE_RESEARCHED and slotData.nrdTraitType == ITEM_TRAIT_TYPE_NONE
+end
 local function augmentSlotData(slotData)
-  if slotData.nrdTraitType == nil then
+  if slotData.nrdTraitType == nil or doesTraitTypeContradictTraitInformation(slotData) then
     slotData.nrdTraitType = GetItemTrait(slotData.bagId, slotData.slotIndex)
+    if doesTraitTypeContradictTraitInformation(slotData) then
+      error(
+        "supposedly unreachable: doesTraitTypeContradictTraitInformation is consistently true for '" .. tostring(slotData.name) .. "'"
+        .. " (traitInformation=" .. tostring(slotData.traitInformation)
+        .. ", traitType=" .. tostring(slotData.nrdTraitType)
+        .. ")"
+      )
+    end
     if slotData.nrdTraitType ~= ITEM_TRAIT_TYPE_NONE and not isTraitCraftingMaterial(slotData) then
       slotData.nrdEquipmentClass = NoResearchDupes.EquipmentClass.forSlotData(slotData)
       slotData.nrdTraitId = packTraitId(slotData.nrdTraitType, slotData.nrdEquipmentClass)
@@ -95,7 +112,12 @@ end
 
 local function isBestResearchableItem(slotData)
   if slotData.nrdTraitId == nil then
-    error("supposedly unreachable: slotData.nrdTraitId == nil")
+    error(
+      "supposedly unreachable: slotData.nrdTraitId == nil" ..
+      ", but slotData.traitInformation = " .. tostring(slotData.traitInformation) ..
+      ", slotData.nrdTraitType = " .. tostring(slotData.nrdTraitType) ..
+      ", slotData.name = " .. tostring(slotData.name)
+    )
   end
   local items = sortedItemsByTrait[slotData.nrdTraitId]
   if #items == 0 then
@@ -126,6 +148,8 @@ local function sortInventoryViewByModifiedTraitInformation(inventory)
       return slot1.traitInformationSortOrder < slot2.traitInformationSortOrder
     end
     if slot1.traitInformation == ITEM_TRAIT_INFORMATION_CAN_BE_RESEARCHED then
+      augmentSlotData(slot1)
+      augmentSlotData(slot2)
       local isBest1 = isBestResearchableItem(slot1)
       local isBest2 = isBestResearchableItem(slot2)
       if isBest1 ~= isBest2 then
