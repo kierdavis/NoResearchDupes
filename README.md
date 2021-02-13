@@ -20,7 +20,7 @@ views.
 
 ## Installation
 
-1. 	Head to the [release list](releases).
+1. 	Head to the [release list][releases].
 
 2. 	Download `NoResearchDupes-N.zip` for the latest release.
 
@@ -36,10 +36,14 @@ views.
 
 ## Support
 
-Feel free to [open an issue on this repository](issues) or send an in-game mail
+Feel free to [open an issue on this repository][issues] or send an in-game mail
 to `@always.ada` if you have any problems. I work on this in my free time, so
 I don't provide any guarantees on when/if I will respond, but I try my best.
 
 ## License
 
 [LICENSE.txt](LICENSE.txt)
+
+
+[releases]: https://github.com/kierdavis/NoResearchDupes/releases
+[issues]: https://github.com/kierdavis/NoResearchDupes/issues
