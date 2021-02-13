@@ -7,7 +7,7 @@
 ## Description: Save inventory space by only keeping one item of each researchable trait.
 ## Author: always.ada
 ## APIVersion: 100033
-## AddOnVersion: 1
+## AddOnVersion: 2
 
 NoResearchDupes.lua
 EquipmentClass.lua
