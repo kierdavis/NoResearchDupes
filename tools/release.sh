@@ -6,9 +6,18 @@ if [[ -z "${1:-}" ]]; then
   echo >&2 "usage: $0 <version>"
   exit 1
 fi
-version=$1
 
 name=NoResearchDupes
+version="$1"
+root="$(dirname "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")"
 
-mkdir -p release
-git archive --format=zip --prefix="$name/" --output="release/$name-$version.zip" "v$version" NoResearchDupes.txt *.lua
+cd "$root"
+mkdir -p "$root/release"
+git archive \
+  --format=zip \
+  --prefix="$name/" \
+  --output="$root/release/$name-$version.zip" \
+  "v$version" \
+  "$name.txt" \
+  "LICENSE.txt" \
+  $(find . -name '*.lua')
