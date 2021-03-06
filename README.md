@@ -20,19 +20,19 @@ views.
 
 ## Installation
 
-1. 	Head to the [release list][releases].
+1.  Head to the [release list][releases].
 
-2. 	Download `NoResearchDupes-N.zip` for the latest release.
+2.  Download `NoResearchDupes-N.zip` for the latest release.
 
-3. 	Open the downloaded file, and copy the `NoResearchDupes` folder contained
-   	within.
+3.  Open the downloaded file, and copy the `NoResearchDupes` folder contained
+    within.
 
-4. 	Navigate to `Documents\Elder Scrolls Online\live\AddOns` and paste the
-   	previously copied folder here.
+4.  Navigate to `Documents\Elder Scrolls Online\live\AddOns` and paste the
+    previously copied folder here.
 
-5. 	If Elder Scrolls Online is currently running, open the chat bar and type
-	`/reloadui` to load the addon. If not, the addon will be loaded the next
-	time the game is launched.
+5.  If Elder Scrolls Online is currently running, open the chat bar and type
+    `/reloadui` to load the addon. If not, the addon will be loaded the next
+    time the game is launched.
 
 ## Support
 
