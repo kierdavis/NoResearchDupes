@@ -6,8 +6,8 @@
 ## Title: No Research Dupes
 ## Description: Save inventory space by only keeping one item of each researchable trait.
 ## Author: always.ada
-## APIVersion: 100033
-## AddOnVersion: 2
+## APIVersion: 100033 100034
+## AddOnVersion: 3
 
 NoResearchDupes.lua
 EquipmentClass.lua
