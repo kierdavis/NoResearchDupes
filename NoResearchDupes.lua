@@ -48,7 +48,9 @@ end
 
 local function isFirstPreferredOverSecond(slotData1, slotData2)
   -- TODO: what actually is the difference between functional and display quality?
-  if slotData1.functionalQuality ~= slotData2.functionalQuality then
+  if slotData1.stolen ~= slotData2.stolen then
+    return slotData2.stolen
+  elseif slotData1.functionalQuality ~= slotData2.functionalQuality then
     return slotData1.functionalQuality < slotData2.functionalQuality
   elseif slotData1.displayQuality ~= slotData2.displayQuality then
     return slotData1.displayQuality < slotData2.displayQuality
