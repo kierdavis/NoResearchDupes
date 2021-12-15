@@ -14,7 +14,7 @@ is available on the [addon's page on esoui.com][esoui].
 
 ## Supporting a new ESO release
 
-* Set the maximum compatible API version (the second number on the `APIVersion` line in `CanICraftThis.txt`) to the latest ESO API version as per [this list][apiversions].
+* Set the maximum compatible API version (the second number on the `APIVersion` line in `NoResearchDupes.txt`) to the latest ESO API version as per [this list][apiversions].
 * Test that the addon works as expected.
 * Publish a release by following steps above.
 
@@ -24,3 +24,4 @@ is available on the [addon's page on esoui.com][esoui].
 
 
 [esoui]: https://www.esoui.com/downloads/info2964-NoResearchDupes.html
+[apiversions]: https://wiki.esoui.com/APIVersion
