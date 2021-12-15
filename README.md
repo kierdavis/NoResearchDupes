@@ -12,6 +12,12 @@ is available on the [addon's page on esoui.com][esoui].
 * Create a Github release and attach the new ZIP file.
 * Upload new ZIP file to esoui.com.
 
+## Supporting a new ESO release
+
+* Set the maximum compatible API version (the second number on the `APIVersion` line in `CanICraftThis.txt`) to the latest ESO API version as per [this list][apiversions].
+* Test that the addon works as expected.
+* Publish a release by following steps above.
+
 ## License
 
 [LICENSE.txt](LICENSE.txt)
